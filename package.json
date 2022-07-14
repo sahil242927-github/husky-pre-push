@@ -52,7 +52,7 @@
     "prettier": "^2.7.1"
   },
   "lint-staged": {
-    "../**/*.{js,jsx,ts,tsx}": [
+    "src/**/*.{js,jsx,ts,tsx}": [
       "yarn eslint",
       "yarn prettier --write",
       "yarn test --watchAll=false --findRelatedTests --bail"
