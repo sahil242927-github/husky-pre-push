@@ -18,7 +18,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "npx lint-staged",
     "eslint:fix": "eslint . --fix",
     "check-types": "tsc -p tsconfig.json --noEmit",
     "start": "react-scripts start",
@@ -50,5 +50,12 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "yarn eslint",
+      "yarn prettier --write",
+      "yarn test --watchAll=false --findRelatedTests --bail"
+    ]
   }
 }
